@@ -11,9 +11,10 @@ Based on the above provided arguments, service will refresh the response in ever
 
 ## Usage
 
-- Clone into your local envìronment
+- Create a fork
+- Clone your fork `<your-username>\cowin-slot-notifier` into your local envìronment
 - Use `npm install` to install required dependencies. [Ensure you have [node.js](https://nodejs.org/en/download/) installed into your machine]
-- Setup `.env` file in order to use your personal environment variables in the service.
+- Setup `.env` file in order to use your personal environment variables in the service
 - :fire: Start the service using `npm run start:dev`
 
 
