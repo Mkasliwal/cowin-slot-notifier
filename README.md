@@ -7,7 +7,7 @@ Service takes few arguments in order to provide expected response.
     1. PIN-CODE (at this stage, this can be configured using `env` variable.)
     2. Current Date (service will automatically configure)
 
-Based on the above provided arguments, service will refresh the response in every `20 seconds` and will notify user via `e-mail` :: when the slots are availabe in the area (provided via area pin-code).
+Based on the above provided arguments, service will refresh the response in every `20 seconds` and will notify user via `e-mail` when the slots are availabe in the area (provided via area pin-code).
 
 ## Usage
 
