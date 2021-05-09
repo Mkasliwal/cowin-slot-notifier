@@ -1,11 +1,12 @@
 # Co-Win Email Notifier :sparkles:
 
-Booking vaccination slot :tickets: on [Co-Win](https://www.cowin.gov.in/home) is a long marathon :runner:. Let's make this task bit easier for user in order to get `notified` whenever slot bookings are available in the area.
+Booking vaccination slot :tickets: on [Co-Win](https://www.cowin.gov.in/home) is a long marathon :runner:. Let's make this task bit easier for user in order to get `notified` whenever slot bookings are available in their area.
 
 Service takes few arguments in order to provide expected response.
 - Arguments
-    1. PIN-CODE (at this stage, this can be configured using `env` variable.)
-    2. Current Date (service will automatically configure)
+    1. **PIN-CODE** (at this stage, this can be configured using `env` variable).
+    2. **`from`** and **`to`** takes sender's and receiver's address respectively.
+    3. **Current Date** (service will automatically configure current date) 
 
 Based on the above provided arguments, service will refresh the response in every `20 seconds` and will notify user via `e-mail` when the slots are availabe in the area (provided via area pin-code).
 
