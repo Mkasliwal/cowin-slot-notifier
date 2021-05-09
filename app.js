@@ -38,39 +38,43 @@ const getAvailableSlots = async (cityPinCode, date) => {
         }
     })
         .then(response => response.data)
-        .catch(error => console.log(error))
+        .catch(err => console.log(err))
 }
 
 const transformer = async () => {
-    // YOUR LOCAL AREA PIN-CODE
-    let cityPinCode = process.env.PIN_CODE;
-    // DATE IN YOUR CALENDER TODAY
-    let date = moment().format('DD-MM-YYYY');
+    try {
+        // YOUR LOCAL AREA PIN-CODE
+        let cityPinCode = process.env.PIN_CODE;
+        // DATE IN YOUR CALENDER TODAY
+        let date = moment().format('DD-MM-YYYY');
 
-    const normalisedData = await getAvailableSlots(cityPinCode, date);
-    const normalisedResults = { ...normalisedData };
+        const normalisedData = await getAvailableSlots(cityPinCode, date);
+        const normalisedResults = { ...normalisedData };
 
-    const availableCenters = normalisedResults.centers;
+        const availableCenters = normalisedResults.centers;
 
-    const transformedData = availableCenters.map(el => {
-        const session = el.sessions[0]
-        return {
-            name: el.name,
-            address: el.address,
-            date: session.date,
-            vaccine_available: session.available_capacity,
-            age: session.min_age_limit
-        }
-    })
+        const transformedData = availableCenters.map(el => {
+            const session = el.sessions[0]
+            return {
+                name: el.name,
+                address: el.address,
+                date: session.date,
+                vaccine_available: session.available_capacity,
+                age: session.min_age_limit
+            }
+        })
 
-    transformedData.filter(el => {
-        if (el.vaccine_available > 0) {
-            main(transformedData).catch(console.error);
-            console.log(transformedData)
-        } else {
-            console.log('Will notify when slots are available ...')
-        }
-    });
+        transformedData.filter(el => {
+            if (el.vaccine_available > 0) {
+                main(transformedData).catch(console.error);
+                console.log(transformedData)
+            } else {
+                console.log('Will notify when slots are available ...')
+            }
+        });
+    } catch (err) {
+        console.log(err)
+    }
 
 }
 
