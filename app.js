@@ -3,7 +3,6 @@ const app = express();
 const axios = require('axios');
 const nodemailer = require('nodemailer');
 const moment = require('moment');
-const port = process.env.PORT;
 
 // DEFINE YOUR ENVIRONMENT VARIABLE IN .env
 require('dotenv').config();
@@ -80,10 +79,10 @@ setInterval(() => {
     transformer()
 }, 20000);
 
-app.listen(port, (err) => {
+app.listen((err) => {
     if (err) {
         console.log(err);
     } else {
-        console.log(`Server is listening on port ${port}`);
+        console.log(`Server is listening on port ${process.env.PORT}`);
     }
 });
