@@ -19,8 +19,8 @@ const main = async (msg) => {
 
     const info = await transporter.sendMail({
         // CHANGE VALUES AS PER DESIRED CREDENTIALS
-        from: 'mats.kasliwal@gmail.com',
-        to: 'mayurkasliwal97@gmail.com',
+        from: process.env.EMAIL,
+        to: '<receiversEmail>',
         subject: 'Slots Availability',
         text: `Seems some slots are available!! Rush and grab Your slots from Co-Win portal ${JSON.stringify(msg)}`
     });
