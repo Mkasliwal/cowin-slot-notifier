@@ -22,7 +22,7 @@ Based on the above provided arguments, service will refresh the response in ever
 ### NOTE
 
 ```
-1. This application is purely a backend service
-2. API used dosen't provide real-time data after 11 May 2021
+1. This application is purely a backend service.
+2. API used dosen't provide real-time data after new CoWIN API revised guidelines from Government of India. 
 ```
 *Read more about [Policy](https://apisetu.gov.in/public/api/cowin#:~:text=Co-WIN%20Public,%5D)
